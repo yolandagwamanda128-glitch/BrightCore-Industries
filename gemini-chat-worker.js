@@ -1,29 +1,3 @@
-// ═══════════════════════════════════════════════════════════════════
-// BrightCore Industries — Gemini Chat Proxy (Cloudflare Worker)
-// ═══════════════════════════════════════════════════════════════════
-// This runs on Cloudflare's free tier and keeps your Gemini API key
-// secret on the server side. Your website calls THIS worker; this
-// worker calls Gemini. The key never touches the browser or GitHub.
-//
-// SETUP (5 minutes, no coding required beyond pasting this in):
-//   1. Go to https://dash.cloudflare.com → sign up free
-//   2. Left sidebar → Workers & Pages → Create → "Create Worker"
-//   3. Name it something like "brightcore-chat" → Deploy
-//   4. Click "Edit code" and paste this ENTIRE file, replacing the default
-//   5. Click "Deploy" again
-//   6. Go to Settings → Variables and Secrets → Add:
-//        Name:  GEMINI_API_KEY
-//        Value: (your NEW regenerated Gemini key — see note below)
-//        Type:  Secret (this hides it from view, even from you, after saving)
-//   7. Copy your worker's URL, e.g. https://brightcore-chat.yourname.workers.dev
-//   8. Paste that URL into CHAT_WORKER_URL in the website's <script> section
-//
-// IMPORTANT: The key you shared earlier in chat is now considered
-// exposed. Go to https://aistudio.google.com/apikey, delete/regenerate
-// it, and use the NEW key in step 6 above. Never paste a real key into
-// a chat, commit, or public repo again.
-// ═══════════════════════════════════════════════════════════════════
-
 const GEMINI_MODEL = 'gemini-2.5-flash'; // current stable Gemini model as of mid-2026
 
 const SYSTEM_PROMPT = `You are the official virtual assistant for BrightCore Industries, a digital solutions company based in Durban, South Africa. Speak in a friendly, professional, concise tone — usually 2 to 4 sentences.
