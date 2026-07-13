@@ -737,13 +737,6 @@ window.addEventListener('scroll', () => {
   navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--black)' : ''; });
 });
 
-// ── FORMSPREE CONTACT FORM ──────────────────────────────────────────
-// TO ACTIVATE:
-//   1. Go to https://formspree.io — sign up free
-//   2. Create a new form named "BrightCore Enquiries"
-//   3. Copy your form ID (e.g. xpwzgkla)
-//   4. Paste it below replacing YOUR_FORM_ID
-// ────────────────────────────────────────────────────────────────────
 const FORMSPREE_ID = 'YOUR_FORM_ID';
 
 async function submitForm() {
